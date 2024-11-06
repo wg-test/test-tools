@@ -1,0 +1,11 @@
+name: "External Action"
+description: "An action in another repo that echoes a message"
+inputs:
+  message:
+    description: "Message to echo"
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Echo Message
+      run: echo "External Action Message: ${{ inputs.message }}"

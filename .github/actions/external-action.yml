@@ -1,7 +1,0 @@
-name: "My Composite Action"
-description: "A composite action that calls other actions in GitHub-tools"
-runs:
-  using: "composite"
-  steps:
-    - name: Step 1 - Call a local action from the same repo
-      uses: ./action1@${{ github.ref_name }}

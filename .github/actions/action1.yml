@@ -1,0 +1,3 @@
+- name: Echo Text
+      run: |
+          echo "Hello, this is a test message from GitHub Actions!"

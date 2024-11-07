@@ -1,17 +1,19 @@
-# actions-repo-2/custom-action-1/action.yml
-name: Custom Action 1 in Repo 2
-
-description: This action calls a custom action in Repo 3
-
+name: "External Action"
+description: "This is the action that is called by wg-process workflow"
 inputs:
   some-input:
     description: "An input for the custom action"
     required: true
-
 runs:
-  using: "composite"
+  using: "composite"  # Define this as a composite action
   steps:
+    - name: Run a Simple Command
+      run: |
+        echo "Running external action from wg-tools"
+        echo "Received inputs: ${{ inputs.input1 }}, ${{ inputs.input2 }}"
+      shell: bash
     - name: Call custom action in Repo 3
       uses: wg-test/actions/.github/workflows@main
       with:
-        another-input: ${{ inputs.some-input }}
+        input3: "value3"
+        input4: "value4"

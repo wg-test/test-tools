@@ -4,4 +4,4 @@ runs:
   using: "composite"
   steps:
     - name: Step 1 - Call a local action from the same repo
-      uses: ./action1@${{ github.ref_name }}
+      uses: ./action1@${{ inputs.input1 }}

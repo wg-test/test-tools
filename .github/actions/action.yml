@@ -1,25 +1,17 @@
-name: "My Composite Action"
-description: "A composite action that calls other actions in GitHub-tools"
+# actions-repo-2/custom-action-1/action.yml
+name: Custom Action 1 in Repo 2
+
+description: This action calls a custom action in Repo 3
+
+inputs:
+  some-input:
+    description: "An input for the custom action"
+    required: true
+
 runs:
   using: "composite"
   steps:
-    - name: Step 1 - Call a local action from the same repo
-      uses: ./action1@${{ github.ref_name }} 
-
-# name: "External Action"
-# description: "This is the action that is called by wg-process workflow"
-# inputs:
-#   input1:
-#     description: "An example input"
-#     required: true
-#   input2:
-#     description: "Another example input"
-#     required: false
-# runs:
-#   using: "composite"
-#   steps:
-#     - name: Run Command
-#       run: |
-#         echo "Running external action from wg-tools"
-#         echo "Received inputs: ${{ inputs.input1 }}, ${{ inputs.input2 }}"
-#       shell: bash
+    - name: Call custom action in Repo 3
+      uses: repo3-owner/repo3-name/custom-action-2@main
+      with:
+        another-input: ${{ inputs.some-input }}

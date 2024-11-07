@@ -1,25 +1,25 @@
-# name: "My Composite Action"
-# description: "A composite action that calls other actions in GitHub-tools"
-# runs:
-#   using: "composite"
-#   steps:
-#     - name: Step 1 - Call a local action from the same repo
-#       uses: ./action1@${{ inputs.input1 }}
-
-name: "External Action"
-description: "This is the action that is called by wg-process workflow"
-inputs:
-  input1:
-    description: "An example input"
-    required: true
-  input2:
-    description: "Another example input"
-    required: false
+name: "My Composite Action"
+description: "A composite action that calls other actions in GitHub-tools"
 runs:
   using: "composite"
   steps:
-    - name: Run Command
-      run: |
-        echo "Running external action from wg-tools"
-        echo "Received inputs: ${{ inputs.input1 }}, ${{ inputs.input2 }}"
-      shell: bash
+    - name: Step 1 - Call a local action from the same repo
+      uses: ./action1@${{ github.ref_name }} 
+
+# name: "External Action"
+# description: "This is the action that is called by wg-process workflow"
+# inputs:
+#   input1:
+#     description: "An example input"
+#     required: true
+#   input2:
+#     description: "Another example input"
+#     required: false
+# runs:
+#   using: "composite"
+#   steps:
+#     - name: Run Command
+#       run: |
+#         echo "Running external action from wg-tools"
+#         echo "Received inputs: ${{ inputs.input1 }}, ${{ inputs.input2 }}"
+#       shell: bash

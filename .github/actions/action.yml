@@ -1,9 +1,12 @@
 name: "External Action"
 description: "This is the action that is called by wg-process workflow"
 inputs:
-  some-input:
-    description: "An input for the custom action"
+  input1:
+    description: "An example input"
     required: true
+  input2:
+    description: "Another example input"
+    required: false
 runs:
   using: "composite"  # Define this as a composite action
   steps:

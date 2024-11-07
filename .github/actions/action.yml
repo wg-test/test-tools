@@ -12,6 +12,6 @@ runs:
   using: "composite"
   steps:
     - name: Call custom action in Repo 3
-      uses: repo3-owner/repo3-name/custom-action-2@main
+      uses: wg-test/actions/.github/workflows@main
       with:
         another-input: ${{ inputs.some-input }}

@@ -13,7 +13,7 @@ runs:
         echo "Received inputs: ${{ inputs.input1 }}, ${{ inputs.input2 }}"
       shell: bash
     - name: Call custom action in Repo 3
-      uses: wg-test/actions/.github/workflows@main
+      uses: wg-test/actions/.github/action@main
       with:
         input3: "value3"
         input4: "value4"

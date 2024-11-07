@@ -18,8 +18,11 @@ runs:
         echo "Running external action from wg-tools"
         echo "Received inputs: ${{ inputs.input1 }}, ${{ inputs.input2 }}"
       shell: bash
-    - name: Call custom action in Repo 3
-      uses: wg-test/actions/.github/action@${{ inputs.ref-name }}
-      with:
-        input3: "value3"
-        input4: "value4"
+    - name: Verify ref-name
+      run: echo "Ref name is: ${{ inputs.ref-name }}"
+
+    # - name: Call custom action in Repo 3
+    #   uses: wg-test/actions/.github/action@${{ inputs.ref-name }}
+    #   with:
+    #     input3: "value3"
+    #     input4: "value4"

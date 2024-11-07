@@ -1,7 +1,5 @@
 name: "My Composite Action"
 description: "A composite action that calls other actions in GitHub-tools"
-inputs:
-  # You can define any inputs if needed for your action
 runs:
   using: "composite"
   steps:

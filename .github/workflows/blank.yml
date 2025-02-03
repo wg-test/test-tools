@@ -1,1 +1,21 @@
+name: Example Workflow
 
+on: 
+  push:
+    branches: 
+      - main
+  workflow_dispatch:  # Enables manual trigger
+
+env:
+  GLOBAL_VAR: "Hello World"
+
+jobs:
+  example-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get short commit SHA
+        id: get-sha
+        run: echo "SHORT_SHA=$(git rev-parse --short $GITHUB_SHA)" >> $GITHUB_ENV
+        
+      - name: Print Global Variable
+        run: echo "The global variable is $GLOBAL_VAR:${{ env.SHORT_SHA }}"

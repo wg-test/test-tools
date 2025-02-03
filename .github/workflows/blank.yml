@@ -1,17 +1,17 @@
 name: Example Workflow
+
 on: 
   push:
-    branches: main
-
-on:
+    branches: 
+      - main
   workflow_dispatch:  # Enables manual trigger
 
 env:
-  GLOBAL_VAR: "Hello World"actions
+  GLOBAL_VAR: "Hello World"
 
 jobs:
   example-job:
     runs-on: ubuntu-latest
     steps:
       - name: Print Global Variable
-        run: echo "The global variable is $GLOBAL_VAR"dsfsdf.ylm
+        run: echo "The global variable is $GLOBAL_VAR"

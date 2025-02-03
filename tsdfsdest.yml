@@ -1,0 +1,12 @@
+name: Example Workflow
+on: push
+
+env:
+  GLOBAL_VAR: "Hello World"
+
+jobs:
+  example-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Global Variable
+        run: echo "The global variable is $GLOBAL_VAR"

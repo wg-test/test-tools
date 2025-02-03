@@ -12,6 +12,8 @@ jobs:
   example-job:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4  # Ensure the repository is cloned
       - name: Get short commit SHA
         id: get-sha
         run: echo "SHORT_SHA=$(git rev-parse --short $GITHUB_SHA)" >> $GITHUB_ENV
